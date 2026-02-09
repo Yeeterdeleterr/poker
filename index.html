@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poker Night</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div>
+          <h1>Poker Night</h1>
+          <p>Shuffle, deal, and invite friends to the table.</p>
+        </div>
+        <div class="controls">
+          <label>
+            Humans
+            <input id="humanCount" type="number" min="1" max="6" value="1" />
+          </label>
+          <button id="newHand">Shuffle & Deal</button>
+          <button id="toggleQr">Invite via QR</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="table">
+          <div class="felt"></div>
+          <div id="community" class="community-cards"></div>
+          <div id="seats" class="seats"></div>
+          <div class="dealer-chip">D</div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="panel">
+            <h2>Hand Summary</h2>
+            <ul id="handSummary"></ul>
+          </div>
+          <div class="panel qr-panel" id="qrPanel" aria-hidden="true">
+            <h2>Scan to Join</h2>
+            <p>Ask a friend to scan this code to open the table link.</p>
+            <div id="qrCode"></div>
+            <p class="qr-link" id="qrLink"></p>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
